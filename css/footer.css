@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__logo {
+  width: 222px;
+  margin: 32px 49px;
+}
+
+.footer__copyright {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--beige);
+  margin-bottom: 16px;
+}
+
+.footer__developers {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--beige);
+  padding-left: 68px;
+  margin-bottom: 24px;
+}
+
+.footer__developer {
+}
+
+.footer__link {
+}
