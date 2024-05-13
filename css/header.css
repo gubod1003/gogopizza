@@ -1,6 +1,8 @@
 .header {
   position: absolute;
   top: 24px;
+  left: 0;
+  right: 0;
   z-index: 5;
 }
 
@@ -21,4 +23,14 @@
 
 .header__cart:hover {
   color: var(--orange);
+}
+
+@media (width >= 620px) {
+  .header {
+    top: 40px;
+  }
+  
+  .header__logo {
+    width: 164px;
+  }
 }
