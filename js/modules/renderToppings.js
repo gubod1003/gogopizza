@@ -21,8 +21,9 @@ export const renderToppings = async () => {
 
   const itemReset = document.createElement("li");
   itemReset.classList.add("toppings__item");
+  itemReset.classList.add("toppings__item-reset");
   const btnReset = document.createElement("button");
-  itemReset.classList.add("toppings__reset");
+  btnReset.classList.add("toppings__reset");
   btnReset.textContent = 'Сбросить';
   btnReset.type = 'reset';
   itemReset.append(btnReset);
@@ -38,6 +39,18 @@ export const renderToppings = async () => {
 
     renderPizzas(checkedToppings);
 
+    if (checkedToppings.length) {
+      toppingsList.append(itemReset);
+    } else {
+      itemReset.remove();
+    }
+
+  });
+
+  btnReset.addEventListener('click', () => {
+    itemReset.remove();
+    toppingsForm.reset();
+    renderPizzas();
   });
 
 };

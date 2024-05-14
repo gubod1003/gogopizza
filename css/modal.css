@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  z-index: 45;
+  inset: 0;
+  background-color: rgba(44, 40, 38, 0.89);
+  cursor: pointer;
+  padding: 30px 14px;
+  display: none;
+  overflow-y: auto;
+
+}
+
+.modal__main {
+  position: relative;
+  cursor: default;
+  background-color: var(--white);
+  border-radius: 32px;
+  margin: auto;
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.modal__close:hover {
+  color: var(--orange);
+}

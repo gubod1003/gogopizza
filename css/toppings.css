@@ -71,6 +71,31 @@
   color: var(--orange);
 }
 
+.toppings__reset {
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+  border-radius: 32px;
+  padding: 8px 24px;
+  background-color: var(--white);
+  font-size: 14px;
+  color: var(--orange);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.toppings__reset:hover {
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+.toppings__reset:focus-visible {
+  background-color: var(--white);
+  border-color: #b66200;
+  outline: none;
+  color: var(--orange);
+}
+
 @media (width >= 620px) {
   .toppings {
     padding: 32px 0;
@@ -81,6 +106,10 @@
   }
 
   .toppings__label {
+    font-size: 20px;
+  }
+
+  .toppings__reset {
     font-size: 20px;
   }
 }

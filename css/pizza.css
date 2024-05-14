@@ -10,6 +10,29 @@
   margin-bottom: 24px;
 }
 
+.pizza__reset-toppings {
+  border-radius: 32px;
+  padding: 8px 24px;
+  background-color: var(--orange);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--white);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.pizza__reset-toppings:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.pizza__reset-toppings:focus-visible {
+  background-color: var(--white);
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
 .pizza__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -37,6 +60,10 @@
   .pizza__list {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
+  }
+
+  .pizza__reset-toppings {
+    font-size: 20px;
   }
 }
 
