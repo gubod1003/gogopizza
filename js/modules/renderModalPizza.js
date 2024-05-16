@@ -1,3 +1,4 @@
+import { cartControl } from "./cartControl.js";
 import { changeFirstUpperCase, createLabel, createRadioInput } from "./helpers.js";
 
 export const renderModalPizza = ({ id, images, name, price, toppings }) => {
@@ -94,5 +95,38 @@ export const renderModalPizza = ({ id, images, name, price, toppings }) => {
   modalPizzaMain.append(picture, title, toppingsElement, priceSizeInfo, form, closeBtn);
 
   updatePrice();
+  let timerID = NaN;
+
+  form.addEventListener('submit', (e) => {
+    
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const product = {
+      cardId: crypto.randomUUID(),
+      id,
+      crust: formData.get('crust'),
+      size: formData.get('size'),
+    };
+
+    console.log('product:', product);
+
+    cartControl.addCart(product);
+
+    addToCartBtn.disabled = true;
+    addToCartBtn.textContent = 'Добавлено';
+
+    timerID = setTimeout(() => {
+      addToCartBtn.disabled = false;
+      addToCartBtn.textContent = 'В корзине';
+    }, 3000);
+  });
+  
+  form.addEventListener('change', ()=> {
+    clearTimeout(timerID);
+    addToCartBtn.disabled = false;
+    addToCartBtn.textContent = 'В корзине';
+  })
 };
 
