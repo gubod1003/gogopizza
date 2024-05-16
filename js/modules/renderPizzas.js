@@ -1,5 +1,8 @@
 import { getData } from "./getData.js";
 import { modalController } from "./modalController.js";
+import { renderModalPizza } from "./renderModalPizza.js";
+import { changeFirstUpperCase } from "./helpers.js";
+
 
 const btnReset = document.createElement('button');
 btnReset.classList.add('pizza__reset-toppings');
@@ -23,11 +26,7 @@ const createCard = (data) => {
       
   
       <div class="card__content">
-        <h3 class="card__title">${data.name["ru"][0].toUpperCase()}${data.name[
-    "ru"
-  ]
-    .slice(1)
-    .toLowerCase()}</h3>
+        <h3 class="card__title">${changeFirstUpperCase(data.name.ru)}</h3>
   
         <p class="card__info">
           <span class="card__price">${data.price["25cm"]} ₽</span>
@@ -70,10 +69,13 @@ export const renderPizzas = async (toppings) => {
       modal: '.modal-pizza',
       btnOpen: '.card__button',
       btnClose: '.modal__close',
-      cbOpen(btnOpen) {
-        console.log('btnOpen: ', btnOpen.dataset.id);
+      async cbOpen(btnOpen) {
+        const pizza = await getData(
+          `https://elated-same-work.glitch.me/api/products/${btnOpen.dataset.id}`,
+        );
+        renderModalPizza(pizza);
+        console.log('pizza: ', pizza);
       },
-
   });
   } else {
     pizzaTitle.textContent = 'Такой пиццы у нас нет :(';
