@@ -104,13 +104,11 @@ export const renderModalPizza = ({ id, images, name, price, toppings }) => {
     const formData = new FormData(form);
 
     const product = {
-      cardId: crypto.randomUUID(),
+      cartId: crypto.randomUUID(),
       id,
       crust: formData.get('crust'),
       size: formData.get('size'),
     };
-
-    console.log('product:', product);
 
     cartControl.addCart(product);
 

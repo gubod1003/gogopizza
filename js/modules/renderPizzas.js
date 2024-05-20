@@ -74,7 +74,6 @@ export const renderPizzas = async (toppings) => {
           `https://elated-same-work.glitch.me/api/products/${btnOpen.dataset.id}`,
         );
         renderModalPizza(pizza);
-        console.log('pizza: ', pizza);
       },
   });
   } else {

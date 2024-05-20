@@ -22,8 +22,17 @@
   position: absolute;
   top: 16px;
   right: 16px;
+  color: var(--beige);
 }
 
 .modal__close:hover {
   color: var(--orange);
 }
+
+.modal__close:focus-visible {
+  color: var(--dark);
+  border-color: var(--orange);
+  border-radius: 5px;
+}
+
+
